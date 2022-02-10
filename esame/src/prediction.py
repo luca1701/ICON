@@ -6,7 +6,7 @@ Created on 4 feb 2022
 from src.model_performance import accuracy, MAE, kfold
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.tree._classes import DecisionTreeRegressor
+from sklearn.tree._classes import DecisionTreeClassifier
 from src.complete import interaction
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -55,7 +55,7 @@ if __name__ == '__main__':
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1)
     
     #qui il modello apprende da solo
-    model = DecisionTreeRegressor()
+    model = DecisionTreeClassifier()
     #effettuo predizione sui dati
     model.fit(x_train, y_train)    
     #p_train contiene le predizioni(y) sui dati x di training
